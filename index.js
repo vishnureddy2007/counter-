@@ -4,16 +4,36 @@ const countDisplay = document.getElementById("count");
 const increaseBtn = document.getElementById("increase");
 const decreaseBtn = document.getElementById("decrease");
 
-increaseBtn.addEventListener("click", function () {
+function updateDisplay() {
+    countDisplay.textContent = count;
+
+    // Disable buttons at limits
+    decreaseBtn.disabled = count === 0;
+    increaseBtn.disabled = count === 10;
+
+    // Change color dynamically
+    if (count === 10) {
+        countDisplay.style.color = "green";
+    } else if (count === 0) {
+        countDisplay.style.color = "red";
+    } else {
+        countDisplay.style.color = "#333";
+    }
+}
+
+increaseBtn.addEventListener("click", () => {
     if (count < 10) {
         count++;
-        countDisplay.textContent = count;
+        updateDisplay();
     }
 });
 
-decreaseBtn.addEventListener("click", function () {
+decreaseBtn.addEventListener("click", () => {
     if (count > 0) {
         count--;
-        countDisplay.textContent = count;
+        updateDisplay();
     }
 });
+
+updateDisplay();
+

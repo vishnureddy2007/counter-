@@ -1,42 +1,78 @@
+/* Background */
 body {
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-.counter-container {
-    text-align: center;
+/* Card */
+.counter-card {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 300px;
 }
 
+/* Title */
+h1 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+/* Counter Number */
 .count {
-    font-size: 40px;
+    font-size: 60px;
+    font-weight: bold;
     margin: 20px 0;
+    color: #333;
+    transition: 0.3s ease;
 }
 
+/* Button Container */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
-button {
-    font-size: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
+/* Buttons */
+.btn {
+    font-size: 28px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     color: white;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+/* Minus Button */
+.minus {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
 }
+
+/* Plus Button */
+.plus {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Disabled Style */
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
